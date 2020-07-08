@@ -4,8 +4,9 @@ body{
 
 .container{
     display: grid;
-    grid-template-columns: 200px 50% 200px;
-    grid-template-rows: 150px;
+    /* grid-template-columns: 200px 50% 200px;
+    grid-template-rows: 150px 150px; */
+    grid-template: 300px 100px 100px / 50% 200px 100px;
 }
 .item{
     background: lightblue;
