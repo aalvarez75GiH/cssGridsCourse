@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato: 300,400,700" rel="stylesheet">
+    <title>My Platzi Cursos</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+        }
+        .hero{
+            background-color: #23475b;
+            color: white;
+            padding: 32px 15px;
+            display: grid;
+            grid-template-columns: minmax(auto,1024px);
+            justify-content: center;
+            
+        }
+
+        .hero-gridContainer{
+            display: grid;
+            grid-template-columns: 70px 1fr 320px;
+            /* grid-template-rows: 70px 1fr 320px; */
+            grid-template-areas: " badge tittle form"
+                                 " . description form"
+                                 " . countdown form";
+            grid-gap: 10px;
+
+        }
+
+        .badge
+        {
+            grid-area: badge;
+        }
+        .badge img{
+            max-width: 70px;
+        }
+
+        .tittle{
+            grid-area: tittle;
+            font-size: 36px;
+            font-weight: normal;
+            margin: 0;
+            display: flex;
+            align-items: center;
+           
+        }
+
+        .description{
+            grid-area: description;
+
+        }
+        .form{
+            grid-area: form;
+            text-align: center;
+            background-color: rgba(255,255,255, .9);
+            padding: 1.5em;
+            border-radius: 10px;
+
+        }
+        .form p{
+            color: #3a3b3f;
+            font-size: 20px;
+            margin-bottom: 1em;
+        }
+        .form input{
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #dbdbe2;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 1em;
+        }
+
+        .form button{
+            background-color: #98ca3f;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+            border-bottom: 5px solid #6d932b;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .countdown{
+            grid-area: countdown;
+
+        }
+        .countdown p{
+            font-size: 20px;
+            text-align: center;
+            font-weight: 300;
+
+        }
+        .countdown span{
+            font-size: 33px;
+            font-weight: 50;
+
+        }
+
+        .countdown span:after{
+            content: ":";
+            display: inline-block;
+            margin: 0 5px;
+        }
+        .countdown span:last-child::after{
+            display: none;
+
+        }
+
+        p{
+            margin: 0;
+        }
+
+        
+        @media screen and (max-width: 768px){
+            .hero-gridContainer{
+                display: grid;
+                grid-template-columns: 70px 1fr;
+                /* grid-template-rows: 70px 1fr 320px; */
+                grid-template-areas: "     badge tittle       "
+                                     " description description"
+                                     "       form form        "
+                                     "   countdown countdown  ";
+                grid-gap: 10px;
+            }
+        }
+
+        
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="hero">
+
+        <div class="hero-gridContainer">
+            <div class="badge">
+                <img src="./platzi/badge.png" alt="">
+            </div>
+            <h1 class="tittle">
+                Curso de React.js
+            </h1>
+            <div class="description">
+                <p>
+                    React es una de las librerías más utilizadas hoy en día para crear 
+                    aplicaciones web. En este curso podrás dominar la creación de aplicaciones 
+                    a través de un proyecto que te ayudará a explotar todas las capacidades de 
+                    esta librería.
+                </p>
+            </div>
+            <form action="" class="form">
+                <p>
+                    Registrate a Platzi
+                </p>
+                <input type="text" placeholder="Nombre">
+                <input type="email" placeholder="Correo Electronico">
+                <button type="submit">
+                    Comienza Ahora
+                </button>
+            </form>
+            <div class="countdown">
+                <p>
+                    Lanzamiento:
+                </p>
+                <p>
+                    <span>01d</span>
+                    <span>03h</span>
+                    <span>09m</span>
+                    <span>25s</span>
+                    
+                </p>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
