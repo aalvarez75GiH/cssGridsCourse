@@ -44,15 +44,17 @@
         }
 
         .InputSection input{
-            width: 50%;
+            width: 70%;
             height: 10%;
             padding: 10px;
             font-size: 14px;
             border: 1px solid #dbdbe2;
             border-radius: 5px;
             margin-left: 120px;
+           
             
         }
+
         .credentials{
             display: flex;
             flex-direction: row;
@@ -255,17 +257,6 @@
 
 }
         @media screen and (max-width: 1024px){
-        /* .container{
-            width: 100vw;
-            height: 100vh;
-            background-color:aquamarine;
-            display: grid;
-            grid-template-columns: 100px 1fr 293px;
-            grid-template-rows: 70px 1fr 100vw;
-            grid-template-areas: " badge InputSection credentials"
-                                 " bar       main         main   "
-                                 " settings  main         main   ";
-        } */
 
             .content{
                 grid-template-columns: repeat(3,minmax(100px,270px));
@@ -311,9 +302,7 @@
                                  " bar main main"
                                  " bar main main";
         }
-        /* .badge{
-            background-color: whitesmoke;
-        } */
+        
         .credentials{
             background-color: whitesmoke;
         }
@@ -332,19 +321,13 @@
   
         }
         .content{
-           /* display: grid;
-           grid-template-columns: repeat(3,minmax(100px,293px)); */
            grid-template-columns: repeat(3,minmax(100px,270px));
            justify-content: space-around;
-           grid-gap: 3px; 
-           /* width: auto;    
-           height: auto;
-           overflow: hidden; */
+           grid-gap: 3px;
            }
         
         .aclamadas{
            display: grid;
-           /* grid-template-columns: repeat(3,minmax(100px,293px)); */
            grid-template-columns: repeat(3,minmax(100px,270px));
            justify-content: space-around;
            grid-gap: 3px; 
@@ -355,7 +338,6 @@
            
         .perder{
             display: grid;
-            /* grid-template-columns: repeat(3,minmax(100px,293px)); */
             grid-template-columns: repeat(3,minmax(100px,270px));
             justify-content: space-around;
             grid-gap: 3px; 
@@ -435,14 +417,14 @@
 
         @media screen and (max-width: 320px){
         .InputSection input{
-            width: 70%;
+            width: 90%;
             height: 10%;
             padding: 15px;
             font-size: 16px;
             border: 1px solid #dbdbe2;
             border-radius: 5px;
-            margin-left: 120px;
-            margin-right: 20px;
+            margin-left: 90px;
+            
         }
         
         .content{
