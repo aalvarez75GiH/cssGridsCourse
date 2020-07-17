@@ -21,37 +21,109 @@
             grid-template-areas: " badge InputSection credentials"
                                  " bar main main"
                                  " bar main main";
-
-
         }
 
         .badge{
+            display: flex;
+            justify-content: center;
             grid-area: badge;
-            background-color: blue;
+            background-color:white;
+       
         }
+        .badge img{
+            width: 70px;
+            height: 70px;
+        }
+        
         .InputSection{
-            background-color: bisque;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
             grid-area: InputSection;
         }
+
+        .InputSection input{
+            width: 50%;
+            height: 10%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #dbdbe2;
+            border-radius: 5px;
+            margin-left: 120px;
+            
+        }
         .credentials{
-            background-color: black;
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            background-color: white;
             grid-area: credentials;
             color: white;
         }
 
+        .credentials p{
+            color: black;
+            margin:0;
+            font-size: 16px;
+        }
+
+        .credentials .avatar{
+            display: block;
+            margin-left: 12px;
+            width: 40px;
+        }
+        .credentials .downButton{
+           display: block; 
+           width: 20px;
+           padding: 0;
+           
+        }
+
         .bar{
-            background-color: blueviolet;
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            align-items: center;
+            background-color: #e84a5f; 
+            color: white;
             grid-area: bar;
         }
+
+        .bar img{
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 0;
+            max-width: 50px;
+        }
+
+        .imgSettings{
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            align-items: center;
+            background-color: #e84a5f; 
+            color: white;
+            grid-area: bar;
+        }
+        .imgSettings img{
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 0;
+            max-width: 50px;
+        }
+        
+       
+           
+          
         .main{
            grid-area: main;
            background-color: white;
         }
 
-        .settings{
-            grid-area: settings;
-            background-color: brown;
-        }
         /* TODO ESTO VIENE DE INSTAGRAM ****************************************** */
         .titulos{
             display: flex;
@@ -239,6 +311,26 @@
                                  " bar main main"
                                  " bar main main";
         }
+        /* .badge{
+            background-color: whitesmoke;
+        } */
+        .credentials{
+            background-color: whitesmoke;
+        }
+        .credentials p{
+            font-size: 30px;
+            margin:auto;
+  
+        }
+
+        .credentials .avatar{
+            margin-right: 0em;
+  
+        }
+        .credentials .downButton{
+            margin-right: 1em;
+  
+        }
         .content{
            /* display: grid;
            grid-template-columns: repeat(3,minmax(100px,293px)); */
@@ -275,6 +367,16 @@
        
 
         @media screen and (max-width: 515px){
+        .InputSection input{
+            width: 80%;
+            height: 10%;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #dbdbe2;
+            border-radius: 5px;
+            margin-left: 120px;
+            margin-right: 20px;
+        }
         .titulos{
             display: flex;
             justify-content: center;
@@ -332,6 +434,16 @@
     }
 
         @media screen and (max-width: 320px){
+        .InputSection input{
+            width: 70%;
+            height: 10%;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #dbdbe2;
+            border-radius: 5px;
+            margin-left: 120px;
+            margin-right: 20px;
+        }
         
         .content{
             margin: 0;
@@ -375,19 +487,30 @@
     <section class="container">
         
         <div class="badge">
-
+            <img src="./badge.jpeg" alt="">
         </div>
         
         <div class="InputSection">
-
+            <input type="text" placeholder="Busca tu peli, Actor, Actriz o director favorito">
         </div>
         
         <div class="credentials">
-
+            <p>Arnoldo Alvarez</p>
+            <img class="avatar" src="./userAccount2.png" alt="">
+            <img class="downButton" src="./close-down.png" alt="">
         </div>
         
         <div class="bar">
-
+            <img src="./icons8-casa-50.png"/>
+            <p>Home</p>
+            <img src="./trendig.png"/>
+            <p>Trending</p>
+            <img src="./likes FB.webp"/>
+            <p>Likes</p>
+            <div class="imgSettings">
+                    <img src="./icons8-ajustes-50.png"/>
+                    <p>Settings</p>
+            </div>
         </div>
         
         <div class="main">
@@ -401,37 +524,37 @@
                     <figure class="post-image">
                         <img src="./compu.jpg" alt="">
                     </figure>
-                    <!-- <div class="post-overlay">
+                    <div class="post-overlay">
                         
                             <h4 class="post-tittle">The Secret Life of Pets</h4>
                             <p class="post-description">This is the description of the Movie
                              or series that we are showing in this area   
                             </p>
-                    </div> -->
+                    </div>
                 </a>
                 <a href="" class="post">
                     <figure class="post-image">
                         <img src="./compu2.jpg" alt="">
                     </figure>
-                    <!-- <div class="post-overlay">
+                    <div class="post-overlay">
                         
                         <h4 class="post-tittle">The Secret Life of Pets</h4>
                         <p class="post-description">This is the description of the Movie
                          or series that we are showing in this area   
                         </p>
-                </div> -->
+                </div>
                 </a>
                 <a href="" class="post">
                     <figure class="post-image">
                         <img src="./compu3.jpg" alt="">
                     </figure>
-                    <!-- <div class="post-overlay">
+                    <div class="post-overlay">
                         
                         <h4 class="post-tittle">The Secret Life of Pets</h4>
                         <p class="post-description">This is the description of the Movie
                          or series that we are showing in this area   
                         </p>
-                </div> -->
+                </div>
                 </a>
             </div>
                 
@@ -444,37 +567,37 @@
                     <figure class="post-image">
                         <img src="./compu.jpg" alt="">
                     </figure>
-                    <!-- <div class="post-overlay">
+                    <div class="post-overlay">
                         
                         <h4 class="post-tittle">The Secret Life of Pets</h4>
                         <p class="post-description">This is the description of the Movie
                          or series that we are showing in this area   
                         </p>
-                </div> -->
+                </div>
                 </a>
                 <a href="" class="post">
                     <figure class="post-image">
                         <img src="./compu2.jpg" alt="">
                     </figure>
-                    <!-- <div class="post-overlay">
+                    <div class="post-overlay">
                         
                         <h4 class="post-tittle">The Secret Life of Pets</h4>
                         <p class="post-description">This is the description of the Movie
                          or series that we are showing in this area   
                         </p>
-                </div> -->
+                </div>
                 </a>
                 <a href="" class="post">
                     <figure class="post-image">
                         <img src="./compu3.jpg" alt="">
                     </figure>
-                    <!-- <div class="post-overlay">
+                    <div class="post-overlay">
                         
                         <h4 class="post-tittle">The Secret Life of Pets</h4>
                         <p class="post-description">This is the description of the Movie
                          or series that we are showing in this area   
                         </p>
-                </div> -->
+                </div>
                 </a>
             </div>
            
@@ -488,47 +611,41 @@
                     <figure class="post-image">
                         <img src="./compu.jpg" alt="">
                     </figure>
-                    <!-- <div class="post-overlay">
+                    <div class="post-overlay">
                             
                         <h4 class="post-tittle">The Secret Life of Pets</h4>
                         <p class="post-description">This is the description of the Movie
                          or series that we are showing in this area   
                         </p>
-                </div> -->
+                </div>
                 </a>
                 <a href="" class="post">
                     <figure class="post-image">
                         <img src="./compu2.jpg" alt="">
                     </figure>
-                    <!-- <div class="post-overlay">
+                    <div class="post-overlay">
                             
                         <h4 class="post-tittle">The Secret Life of Pets</h4>
                         <p class="post-description">This is the description of the Movie
                          or series that we are showing in this area   
                         </p>
-                </div> -->
+                </div>
                 </a>
                 <a href="" class="post">
                     <figure class="post-image">
                         <img src="./compu3.jpg" alt="">
                     </figure>
-                    <!-- <div class="post-overlay">
+                    <div class="post-overlay">
                             
                         <h4 class="post-tittle">The Secret Life of Pets</h4>
                         <p class="post-description">This is the description of the Movie
                          or series that we are showing in this area   
                         </p>
-                </div> -->
+                </div>
                 </a>
             </div>
     
     </div>
-        
-
-
-    </section>
-
-
-    
+</section>
 </body>
 </html>
