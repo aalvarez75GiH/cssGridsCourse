@@ -11,17 +11,18 @@
             font-family: 'Lato', sans-serif;
         }
         .hero{
-            background-color: #23475b;
-            color: white;
-            padding: 32px 15px;
             display: grid;
             grid-template-columns: minmax(auto,1024px);
             justify-content: center;
+            background-color: #23475b;
+            color: white;
+            padding: 32px 15px;
+           
             
         }
 
         .hero-gridContainer{
-            display: grid;
+            display: block;
             grid-template-columns: 70px 1fr 320px;
             /* grid-template-rows: 70px 1fr 320px; */
             grid-template-areas: " badge tittle form"
@@ -120,8 +121,8 @@
         @media screen and (max-width: 768px){
             .hero-gridContainer{
                 display: grid;
-                grid-template-columns: 70px 1fr;
-                /* grid-template-rows: 70px 1fr 320px; */
+                /* grid-template-columns: 70px 1fr; */
+                grid-template-rows: 70px 1fr 320px;
                 grid-template-areas: "     badge tittle       "
                                      " description description"
                                      "       form form        "
