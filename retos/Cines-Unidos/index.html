@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cines Unidos on Line</title>
+    <style>
+        body
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+        .container
+        {
+            display: grid;
+            grid-template-columns: 100px 1fr 290px;
+            grid-template-rows: 70px 1fr 400px;
+            width: 100vw;
+            height: 100vh;
+            background-color:aquamarine;
+            grid-template-areas: " badge InputSection credentials"
+                                 " bar main main"
+                                 " bar main main";
+        }
+
+        .badge{
+            display: flex;
+            justify-content: center;
+            grid-area: badge;
+            background-color:white;
+       
+        }
+        .badge img{
+            width: 70px;
+            height: 70px;
+        }
+        
+        .InputSection{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            grid-area: InputSection;
+        }
+
+        .InputSection input{
+            width: 70%;
+            height: 10%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #dbdbe2;
+            border-radius: 5px;
+            margin-left: 120px;
+           
+            
+        }
+
+        .credentials{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            align-items: center;
+            background-color: white;
+            grid-area: credentials;
+            color: white;
+        }
+
+        .credentials p{
+            color: black;
+            margin:0;
+            font-size: 16px;
+        }
+
+        .credentials .avatar{
+            display: block;
+            margin-left: 12px;
+            width: 40px;
+        }
+        .credentials .downButton{
+           display: block; 
+           width: 20px;
+           padding: 0;
+           
+        }
+
+        .bar{
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            align-items: center;
+            background-color: #e84a5f; 
+            color: white;
+            grid-area: bar;
+        }
+
+        .bar img{
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 0;
+            max-width: 50px;
+        }
+
+        .imgSettings{
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            align-items: center;
+            background-color: #e84a5f; 
+            color: white;
+            grid-area: bar;
+        }
+        .imgSettings img{
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 0;
+            max-width: 50px;
+        } 
+           
+          
+        .main{
+           grid-area: main;
+           background-color: white;
+        }
+
+        /* TODO ESTO VIENE DE INSTAGRAM ****************************************** */
+        .titulos{
+            display: flex;
+            justify-content: flex-start;
+        }
+        .titulos p{
+            display: block;
+            margin-left: 80px;
+        }
+       .content{
+           display: grid;
+           grid-template-columns: repeat(3,minmax(100px,293px));
+           justify-content: space-around;
+           grid-gap: 28px; 
+           width: auto;    
+           height: auto;
+           overflow: hidden;
+           }
+
+        .aclamadas{
+           display: grid;
+           grid-template-columns: repeat(3,minmax(100px,293px));
+           justify-content: space-around;
+           grid-gap: 28px; 
+           width: auto; 
+           height: auto;
+           overflow: hidden;
+           }
+
+        .perder{
+           display: grid;
+           grid-template-columns: repeat(3,minmax(100px,293px));
+           justify-content: space-around;
+           grid-gap: 28px; 
+           width: auto; 
+           height: auto;
+           overflow: hidden;
+           }
+          
+        .post{
+           cursor: pointer;
+           position: relative;
+           display: block;
+        }
+        .post-overlay{
+            background-color: rgba(252,113,109, .8);
+            position: absolute;
+            padding: 0 15px;
+            bottom: 0;
+            top: 100%;
+            display: none;
+            align-items: center;
+            color: white;
+            text-align: left;
+            font-weight: 200;
+            transition: .8s ease;
+        }
+        .post:hover .post-overlay{
+            top:50%;
+            display: block; 
+        }
+        .post-overlay h4{
+            margin-top: 10px;
+            display: block;
+        }
+        .post-overlay p{
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+    
+        .post-image{
+            margin: 0;
+        }
+        .post-image img{  
+            width: 100%;
+            vertical-align: top;
+        }
+         /* ************************************* */
+
+        .settings{
+            background-color: brown;
+            grid-area: settings;
+        }
+        @media screen and (max-width: 1280px){
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color:aquamarine;
+            display: grid;
+            grid-template-columns: 100px 1fr 290px;
+            grid-template-rows: 70px 1fr 100vw;
+            grid-template-areas: " badge InputSection credentials"
+                                 " bar       main         main   "
+                                 " bar        main         main   ";
+        }
+        .content{
+            display: grid;
+            grid-template-columns: repeat(3,minmax(100px,330px));
+            justify-content: left;
+            margin-left: 4em;
+            grid-gap: 28px; 
+            width: auto;    
+            height: auto;
+            overflow: hidden;
+           }
+        
+        .aclamadas{
+            display: grid;
+            grid-template-columns: repeat(3,minmax(100px,330px));
+            justify-content: left;
+            margin-left: 4em;
+            grid-gap: 28px; 
+            width: auto;    
+            height: auto;
+            overflow: hidden;
+        }
+           
+        .perder{
+            display: grid;
+            grid-template-columns: repeat(3,minmax(100px,330px));
+            justify-content: left;
+            margin-left: 4em;
+            grid-gap: 28px; 
+            width: auto;    
+            height: auto;
+            overflow: hidden;
+        }
+
+}
+        @media screen and (max-width: 1024px){
+
+            .content{
+                grid-template-columns: repeat(3,minmax(100px,270px));
+                justify-content: center;
+                grid-gap: 9px; 
+                width: auto;    
+                height: auto;
+                margin-right: 10px;
+               
+           }
+           .aclamadas{
+            justify-content: space-evenly;
+                grid-gap: 9px; 
+                width: auto;    
+                height: auto;
+                margin-right: 10px;
+                
+           }
+           .perder{
+                justify-content: space-evenly;
+                grid-gap: 9px; 
+                width: auto;    
+                height: auto;
+                margin-right: 10px;
+               
+           }
+           .post-image img{  
+            width: 100%;
+            vertical-align: top;
+        }
+}
+        @media screen and (max-width: 767px){
+        body{
+            overflow-x: hidden;
+            /* overflow-y: hidden; */
+        }
+       
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color:aquamarine;
+            display: grid;
+            grid-template-columns: 100px 100vw;
+            grid-template-rows: 70px 70px 100vw;
+            grid-template-areas: " badge credentials credentials"
+                                 " InputSection InputSection  InputSection"
+                                 " bar main main"
+                                 " bar main main";
+            
+        }
+        
+        .credentials{
+            background-color: whitesmoke;
+        }
+        .credentials p{
+            font-size: 30px;
+            margin:auto;
+  
+        }
+
+        .credentials .avatar{
+            margin-right: 0em;
+  
+        }
+        .credentials .downButton{
+            margin-right: 1em;
+  
+        }
+        .content{
+           grid-template-columns: repeat(3,minmax(100px,270px));
+           justify-content: space-around;
+           grid-gap: 3px;
+           margin-right: 2em;
+           }
+        
+        .aclamadas{
+           display: grid;
+           grid-template-columns: repeat(3,minmax(100px,270px));
+           justify-content: space-around;
+           grid-gap: 3px; 
+           width: auto;    
+           height: auto;
+           overflow: hidden;
+           margin-right: 2em;
+        }
+           
+        .perder{
+            display: grid;
+            grid-template-columns: repeat(3,minmax(100px,270px));
+            justify-content: space-around;
+            grid-gap: 3px; 
+            width: auto;    
+            height: auto;
+            overflow: hidden;
+            margin-right: 2em;
+        }
+        }
+       
+
+        @media screen and (max-width: 515px){
+        .InputSection input{
+            width: 80%;
+            height: 10%;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #dbdbe2;
+            border-radius: 5px;
+            margin-left: 120px;
+            margin-right: 20px;
+        }
+        .titulos{
+            display: flex;
+            justify-content: center;
+            font-size: 25px;
+        }
+        .titulos p{
+            display: block;
+            margin-left: 80px;
+        }
+        
+        .container{
+            grid-template-columns: 70px 100vw;
+            grid-template-rows: 70px 70px 100%;
+            grid-template-areas: " badge        credentials  "
+                                 " InputSection InputSection "
+                                 " main         main         ";
+            /* overflow: hidden; */
+        }
+           
+        .content{
+            margin: 0;
+            display:grid;
+            grid-template:repeat(3,500px) / repeat(1,minmax(300px,500px));
+            justify-content: center;
+            grid-gap: 8px;
+            overflow: hidden;
+        }
+        .aclamadas{
+            margin: 0;
+            display:grid;
+            grid-template:repeat(3,500px) / repeat(1,minmax(300px,500px));
+            justify-content: center;
+            grid-gap: 8px;
+            overflow: hidden;
+        }
+
+        .perder{
+            margin: 0;
+            display:grid;
+            grid-template:repeat(3,500px) / repeat(1,minmax(300px,500px));
+            justify-content: center;
+            grid-gap: 8px;
+            overflow: hidden;
+        }
+        .post-image{
+            margin: 0;
+        }
+        .post-image img{  
+            width: 100vw;
+            vertical-align: top;
+        }
+        .post-image img{  
+            width: 100%;
+            vertical-align: top;
+        }
+    }
+
+        @media screen and (max-width: 320px){
+        .container{
+            grid-template-columns: 70px 100vw;
+            grid-template-rows: 70px 70px 100%;
+            grid-template-areas: " badge        credentials  "
+                                 " InputSection InputSection "
+                                 " main         main         ";
+            /* overflow: hidden; */
+        }
+        .InputSection input{
+            width: 90%;
+            height: 10%;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #dbdbe2;
+            border-radius: 5px;
+            margin-left: 90px;
+            
+        }
+        
+        .content{
+            margin: 0;
+            display:grid;
+            grid-template:repeat(3,400px) / repeat(1,minmax(200px,400px));
+            justify-content: center;
+            grid-gap: 8px;
+            overflow: hidden;
+        }
+        .aclamadas{
+            margin: 0;
+            display:grid;
+            grid-template:repeat(3,400px) / repeat(1,minmax(200px,400px));
+            justify-content: center;
+            grid-gap: 8px;
+            overflow: hidden;
+        }
+
+        .perder{
+            margin: 0;
+            display:grid;
+            grid-template:repeat(3,400px) / repeat(1,minmax(200px,400px));
+            justify-content: center;
+            grid-gap: 8px;
+            overflow: hidden;
+        }
+
+        /* .content{
+             grid-template:repeat(3,293px) / repeat(1,minmax(100px,293px));
+             justify-content: center;
+             grid-gap: 15px; 
+             width: auto;    
+             height: auto;
+             overflow: hidden;
+        } */
+        }
+
+    </style>
+</head>
+<body>
+    <section class="container">
+        
+        <div class="badge">
+            <img src="./badge.jpeg" alt="">
+        </div>
+        
+        <div class="InputSection">
+            <input type="text" placeholder="Busca tu peli, Actor, Actriz o director favorito">
+        </div>
+        
+        <div class="credentials">
+            <p>Arnoldo Alvarez</p>
+            <img class="avatar" src="./userAccount2.png" alt="">
+            <img class="downButton" src="./close-down.png" alt="">
+        </div>
+        
+        <div class="bar">
+            <img src="./icons8-casa-50.png"/>
+            <p>Home</p>
+            <img src="./trendig.png"/>
+            <p>Trending</p>
+            <img src="./likes FB.webp"/>
+            <p>Likes</p>
+            <div class="imgSettings">
+                    <img src="./icons8-ajustes-50.png"/>
+                    <p>Settings</p>
+            </div>
+        </div>
+        
+        <div class="main">
+
+            <div class="titulos">
+                <p>Ahora en el cine</p>
+            </div>
+
+            <div class="content">
+                <a href="" class="post">
+                    <figure class="post-image">
+                        <img src="./compu.jpg" alt="">
+                    </figure>
+                    <div class="post-overlay">
+                        
+                            <h4 class="post-tittle">The Secret Life of Pets</h4>
+                            <p class="post-description">This is the description of the Movie
+                             or series that we are showing in this area   
+                            </p>
+                    </div>
+                </a>
+                <a href="" class="post">
+                    <figure class="post-image">
+                        <img src="./compu2.jpg" alt="">
+                    </figure>
+                    <div class="post-overlay">
+                        
+                        <h4 class="post-tittle">The Secret Life of Pets</h4>
+                        <p class="post-description">This is the description of the Movie
+                         or series that we are showing in this area   
+                        </p>
+                </div>
+                </a>
+                <a href="" class="post">
+                    <figure class="post-image">
+                        <img src="./compu3.jpg" alt="">
+                    </figure>
+                    <div class="post-overlay">
+                        
+                        <h4 class="post-tittle">The Secret Life of Pets</h4>
+                        <p class="post-description">This is the description of the Movie
+                         or series that we are showing in this area   
+                        </p>
+                </div>
+                </a>
+            </div>
+                
+            <div class="titulos">
+                <p>Aclamadas por la critica</p>
+            </div>
+           
+            <div class="aclamadas">
+                <a href="" class="post">
+                    <figure class="post-image">
+                        <img src="./compu.jpg" alt="">
+                    </figure>
+                    <div class="post-overlay">
+                        
+                        <h4 class="post-tittle">The Secret Life of Pets</h4>
+                        <p class="post-description">This is the description of the Movie
+                         or series that we are showing in this area   
+                        </p>
+                </div>
+                </a>
+                <a href="" class="post">
+                    <figure class="post-image">
+                        <img src="./compu2.jpg" alt="">
+                    </figure>
+                    <div class="post-overlay">
+                        
+                        <h4 class="post-tittle">The Secret Life of Pets</h4>
+                        <p class="post-description">This is the description of the Movie
+                         or series that we are showing in this area   
+                        </p>
+                </div>
+                </a>
+                <a href="" class="post">
+                    <figure class="post-image">
+                        <img src="./compu3.jpg" alt="">
+                    </figure>
+                    <div class="post-overlay">
+                        
+                        <h4 class="post-tittle">The Secret Life of Pets</h4>
+                        <p class="post-description">This is the description of the Movie
+                         or series that we are showing in this area   
+                        </p>
+                </div>
+                </a>
+            </div>
+           
+            
+            <div class="titulos">
+                <p>No te debes perder</p>
+            </div>
+           
+            <div class="perder">
+                <a href="" class="post">
+                    <figure class="post-image">
+                        <img src="./compu.jpg" alt="">
+                    </figure>
+                    <div class="post-overlay">
+                            
+                        <h4 class="post-tittle">The Secret Life of Pets</h4>
+                        <p class="post-description">This is the description of the Movie
+                         or series that we are showing in this area   
+                        </p>
+                </div>
+                </a>
+                <a href="" class="post">
+                    <figure class="post-image">
+                        <img src="./compu2.jpg" alt="">
+                    </figure>
+                    <div class="post-overlay">
+                            
+                        <h4 class="post-tittle">The Secret Life of Pets</h4>
+                        <p class="post-description">This is the description of the Movie
+                         or series that we are showing in this area   
+                        </p>
+                </div>
+                </a>
+                <a href="" class="post">
+                    <figure class="post-image">
+                        <img src="./compu3.jpg" alt="">
+                    </figure>
+                    <div class="post-overlay">
+                            
+                        <h4 class="post-tittle">The Secret Life of Pets</h4>
+                        <p class="post-description">This is the description of the Movie
+                         or series that we are showing in this area   
+                        </p>
+                </div>
+                </a>
+            </div>
+    
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platzi Video</title>
+    <style>
+    body
+    {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container{
+        display: grid;
+        grid-template-columns: 325px 1fr 450px;
+        grid-template-rows: 100px 300px 200px 120px 100px 100px 50%;
+        width: 100vw;
+        height: 100vh;
+        background-color:aquamarine;
+        grid-template-areas:    "badge     videoSection videoSection" 
+                                "playlist  videoSection videoSection "
+                                "playlist     controls    controls   "
+                                "playlist    inputSection suggestions"
+                                "friends       comments   suggestions"
+                                "friends       comments   suggestions"
+                                "friends       comments   suggestions";
+        overflow-x: hidden;
+
+    }
+
+    .badge{
+        background-color: #1d1b33;
+        grid-area: badge;
+    }
+    .badge img{
+        width: 100%;
+    }
+    .videoSection{
+        background-color: greenyellow;
+        grid-area: videoSection;
+    }
+    .playlist{
+        display: flex;
+        flex-direction: column;
+        justify-content: left ;
+        background-color: #1d1b33;
+        grid-area: playlist;
+    }
+
+    .my-playlist-tittle{
+        color:  #fff;
+        font-weight: lighter;
+        margin:15px;
+    }
+    
+    .my-playlist-list{
+        padding: 0 1em;
+        /* display: block; */
+        list-style-type: decimal;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 40px;
+    }
+    .my-playlist-item{
+        color:  #fff;
+        padding-bottom: 1em;
+        padding-left: 1em;
+        display:list-item;
+    }
+    .my-playlist-item a{
+        text-decoration:none;
+        color:  #fff;
+        font-weight: lighter;
+        font-size: 14px;
+    }
+
+    .controls{
+        background-color: whitesmoke;
+        grid-area: controls;
+    }
+    .controls h1{
+        font-weight: lighter;
+        margin:15px;
+    }
+    .controls p{
+        margin-left:15px;
+        color: grey;
+        opacity: .7;
+    }
+    .controls .tools{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        width:100%;
+        height: 100px;
+        background-color: whitesmoke;
+        border-bottom: 4px solid #d0d0d0
+        /* margin-left: 20px; */
+    }
+
+    /* Proveniente de FrontEnd Developer */
+
+    .tools .download{
+        width:40px;
+        height: 40px;
+    }
+    .addList{
+        padding: .2em 1.2em;
+        background:linear-gradient(to left,#db1178,#c90021);
+        border:none;
+        border-radius: 0.5em;
+        width: 170px;
+        height: 40px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        /* letter-spacing: 1px; */
+        margin: 10px 0px;
+    }
+    /* *********************************  */
+
+    .nature{
+        color: white;
+        background-color: purple;
+        border:none;
+        border-radius: 40px;
+        width: 100px;
+        height: 30px;
+        padding: 2px;
+    }
+    .relax{
+        color: white;
+        background-color: #27fdbc;
+        border:none;
+        border-radius: 40px;
+        width: 100px;
+        height: 30px;
+        padding: 2px;
+
+    }
+    .music{
+        color: white;
+        background-color: brown;
+        border:none;
+        border-radius: 40px;
+        width: 100px;
+        height: 30px;
+        padding: 2px;
+
+    }
+    .study{
+        color: white;
+        background-color: #db1178;
+        border:none;
+        border-radius: 40px;
+        width: 100px;
+        height: 30px;
+        padding: 2px;
+
+    }
+   
+    
+    .inputSection{
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        background-color: whitesmoke;
+        grid-area: inputSection;
+    }
+    .inputSection h3{
+        margin-left: 20px;
+        color: #43475c;
+        font-size: 1.2;
+        font-weight: 400;
+    }
+    .inputText{
+        width: 85%;
+        height: 10%;
+        padding: 15px;
+        font-size: 16px;
+        border: 1px solid #dbdbe2;
+        border-radius: 5px;
+        margin-left: 20px;
+        margin-bottom: 50px;
+        /* margin-right: 20px; */
+    }
+
+   .suggestions{
+    color: white;
+    background-color: blue;
+    grid-area: suggestions;
+    
+
+   }
+   .friends{
+       background-color: #1d1b33;
+       color: white;
+       grid-area: friends;
+   }
+
+   .friend{
+       display: flex;
+       justify-content: left;
+       align-items: center;
+   }
+   .friend img{
+       border-radius: 25%;
+       display: block;
+       margin-left: 12px;
+       width: 40px;
+       height: 40px;
+       margin-left: 1em;
+    }
+    .friend p{
+        margin-left: 1em;
+    }
+
+   .comments{
+    background-color: brown;
+    grid-area: comments;
+   }
+
+   .NO_friend{
+       display: flex;
+       justify-content: left;
+       align-items: center;
+   }
+   .NO_friend img{
+       border-radius: 25%;
+       display: block;
+       margin-left: 12px;
+       width: 40px;
+       height: 40px;
+       margin-left: 1em;
+    }
+    .NO_friend p{
+        margin-left: 1em;
+    }
+   
+   @media screen and (max-width: 1280px){
+
+   }
+   @media screen and (max-width: 1023px){
+    .container{                 
+        display: grid;
+        grid-template-columns: 500px 100%;
+        grid-template-rows: 100px 450px 145px 100px 500px;
+        width: 100vw;
+        height: 100vh;
+        background-color:aquamarine;
+        grid-template-areas:    " badge                            badge"
+                                " videoSection              videoSection"
+                                " controls                      controls"
+                                " inputSection               suggestions"
+                                " comments               suggestions    ";
+        overflow-x: hidden;
+
+    }
+    .badge{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        background-color: #1d1b33;
+        grid-area: badge;
+    }
+    .badge img{
+        margin-left: 2em;
+        width: 15%;
+        height: 70%;
+    }
+   }
+   @media screen and (max-width: 767px){
+    .container{                 
+        display: grid;
+        grid-template-columns: 400px 100%;
+        grid-template-rows: 100px 450px 145px 100px 500px;
+        width: 100vw;
+        height: 100vh;
+        background-color:aquamarine;
+        grid-template-areas:    " badge                            badge"
+                                " videoSection              videoSection"
+                                " controls                      controls"
+                                " inputSection               suggestions"
+                                " comments               suggestions    ";
+
+    }
+
+    .badge{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        background-color: #1d1b33;
+        grid-area: badge;
+    }
+    .badge img{
+        margin-left: 2em;
+        width: 20%;
+        height: 70%;
+    }
+       
+}
+   
+   @media screen and (max-width: 515px){
+    .container{
+        display: grid;
+        grid-template-columns: 325px 1fr 433px;
+        grid-template-rows: 80px 200px 143px 134px 100px 500px 500px;
+        width: 100vw;
+        height: 100vh;
+        background-color:aquamarine;
+        grid-template-areas:    " badge        badge        badge"
+                                " videoSection videoSection videoSection"
+                                " videoSection videoSection videoSection"
+                                " controls     controls     controls    "
+                                " inputSection inputSection inputSection"
+                                " comments     comments     comments    "
+                                " suggestions  suggestions  suggestions ";
+    }
+    .badge{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        background-color: #1d1b33;
+        grid-area: badge;
+    }
+    .badge img{
+        margin-left: 2em;
+        width: 20%;
+        height: 54%;
+    }
+   }
+   @media screen and (max-width: 320px){
+   .badge img{
+       margin-left: 5em;
+       }
+   }
+</style>
+
+</head>
+<body>
+
+    <section class="container">
+
+        <div class="badge">
+            <img src="./logo_platzi.png" alt=""> 
+        </div>
+        
+        <div class="videoSection">2
+    
+        </div>
+        <div class="playlist">3
+            <h4 class="my-playlist-tittle">
+                My Playlist
+            </h4>
+            <ol class="my-playlist-list">
+                
+                <li class="my-playlist-item">
+                    <a href="#">5 Reasons To Chose a Notebook Over A computer Desktop</a>
+                </li>
+                <li class="my-playlist-item">
+                    <a href="#">How To Cook A Tender Juicy Steak</a>
+                </li>
+                <li class="my-playlist-item">
+                    <a href="#">How To Remove Kidney Stones</a>
+                </li>
+                <li class="my-playlist-item">
+                    <a href="#">The Science of Superstitions</a>
+                </li>
+                <li class="my-playlist-item">
+                    <a href="#">JavaScript for assholes</a>
+                </li>
+                <li class="my-playlist-item">
+                    <a href="#">5 Reasons To Chose a Notebook Over A computer Desktop</a>
+                </li>
+                <li class="my-playlist-item">
+                    <a href="#">How To Cook A Tender Juicy Steak</a>
+                </li>
+                <li class="my-playlist-item">
+                    <a href="#">How To Remove Kidney Stones</a>
+                </li>
+                <li class="my-playlist-item">
+                    <a href="#">The Science of Superstitions</a>
+                </li>
+                <li class="my-playlist-item">
+                    <a href="#">JavaScript for assholes</a>
+                </li>
+
+            </ol>
+
+            
+    
+        </div>
+        <div class="controls">
+            <h1 class="controls-tittle">
+                David gilmour - Comfortably Numb
+            </h1>
+            <p>
+                124.886 visits
+            </p>
+            <div class="tools">
+                <button class="addList">Agregar a mi lista
+
+                </button>
+                <img src="./icons8-flecha-adelante-24.png" alt="" class="share">
+                <img src="./icons8-descargar-desde-la-nube-50.png" alt="" class="download">
+                <button class="nature">Nature
+
+                </button>
+                <button class="relax">Relax
+
+                </button>
+                <button class="music">Music
+
+                </button>
+                <button class="study">Studies
+
+                </button>
+            </div>
+    
+        </div>
+        <div class="inputSection">
+            <h3>
+                Comentarios
+            </h3>
+            <input class="inputText" type="text" placeholder="Add your comment">
+        </div>
+        
+        <div class="suggestions">6
+    
+        </div>
+        <div class="friends">
+            <h4 class="my-playlist-tittle">
+                Friends Playlists
+            </h4>
+            <div class="friend">
+                <img src="./userAccount2.png" alt="">
+                <p>
+                    Kristina Summers
+                </p>
+            </div>
+            <div class="friend">
+                <img src="./userAccount2.png" alt="">
+                <p>Arnoldo Alvarez</p>
+            </div>
+            <div class="friend">
+                <img src="./userAccount2.png" alt="">
+                <p>
+                    Race Els
+                </p>
+            </div>
+            <div class="friend">
+                <img src="./userAccount2.png" alt="">
+                <p>
+                    Loreli Els
+                </p>
+            </div>
+        </div>
+
+        <div class="comments">
+            <div class="NO_friend">
+                <img src="./userAccount2.png" alt="">
+                <p>
+                    Kristina Summers
+                </p>
+            </div>
+            <div class="NO_friend">
+                <img src="./userAccount2.png" alt="">
+                <p>Arnoldo Alvarez</p>
+                <p>Nirvana's Roomates</p>
+            </div>
+            <div class="NO_friend">
+                <img src="./userAccount2.png" alt="">
+                <p>Race Els</p>
+                <p>Race Els</p>
+            </div>
+            <div class="NO_friend">
+                <img src="./userAccount2.png" alt="">
+                <p>Loreli Els</p>
+            </div>
+            <div class="NO_friend">
+                <img src="./userAccount2.png" alt="">
+                <p>Debora Soto</p>
+            </div>
+            <div class="NO_friend">
+                <img src="./userAccount2.png" alt="">
+                <p>Luke Skywalker</p>
+            </div>
+    
+        </div>
+    </section>
+   
+
+
+
+    
+
+    
+</body>
+</html>
