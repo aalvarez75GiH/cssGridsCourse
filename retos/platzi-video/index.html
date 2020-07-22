@@ -14,7 +14,7 @@
     .container{
         display: grid;
         grid-template-columns: 325px 1fr 450px;
-        grid-template-rows: 100px 300px 200px 120px 100px 100px 50%;
+        grid-template-rows: 400px 200px 200px 120px 80%;
         width: 100vw;
         height: 100vh;
         background-color:aquamarine;
@@ -22,8 +22,6 @@
                                 "playlist  videoSection videoSection "
                                 "playlist     controls    controls   "
                                 "playlist    inputSection suggestions"
-                                "friends       comments   suggestions"
-                                "friends       comments   suggestions"
                                 "friends       comments   suggestions";
         overflow-x: hidden;
 
@@ -46,6 +44,10 @@
         justify-content: left ;
         background-color: #1d1b33;
         grid-area: playlist;
+        margin-top: -20em;
+    }
+    .playlist h4{
+        font-size: 17.6px;
     }
 
     .my-playlist-tittle{
@@ -74,7 +76,7 @@
         text-decoration:none;
         color:  #fff;
         font-weight: lighter;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .controls{
@@ -175,7 +177,7 @@
     .inputSection h3{
         margin-left: 20px;
         color: #43475c;
-        font-size: 1.2;
+        font-size: 1.2em;
         font-weight: 400;
     }
     .inputText{
@@ -190,17 +192,158 @@
         /* margin-right: 20px; */
     }
 
-   .suggestions{
-    color: white;
-    background-color: blue;
-    grid-area: suggestions;
+    .comments{
+        background-color: whitesmoke;
+        grid-area: comments;
+        color: #858388;
+        font-weight: 100;
+        display: grid;
+        grid-template-columns: 70px 1fr;
+        grid-template-rows: 100px 100px 100px 100px;
+        grid-template-areas:    "nf1Img    nf1Name " 
+                                "nf2Img    nf2Name "
+                                "nf3Img    nf3Name "
+                                "nf4Img    nf4Name ";
+        
+    }
+
+   .comments img{
+       border-radius: 25%;
+       display: block;
+       width: 40px;
+       height: 40px;
+       margin-left: 1em;
+    }
+
+    /* .comments p{
+        margin-left: 1em;
+    } */
+
+    .nf1Img{
+        grid-area: nf1Img;
+        margin-top: 1em;
+
+    }
+    .nf1Name{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        margin: 0;
+        padding: 0;
+        grid-area: nf1Name;
+        
+    }
+    .nf1Name h2,.nf2Name h2,.nf3Name h2,.nf4Name h2{
+        font-weight: 300;
+        margin-top: 1em;
+        margin-bottom: 0;
+    }
+    .nf1Name p, .nf2Name p,.nf3Name p,.nf4Name p{
+        margin-top: 0;
+    }
+    .nf2Img{
+        margin-top: 1em;
+        grid-area: nf2Img;
+    }
+    .nf2Name{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        margin: 0;
+        padding: 0;
+        grid-area: nf2Name;
+    }
+
+    .nf3Img{
+        margin-top: 1em;
+        grid-area: nf3Img;
+    }
+
+    .nf3Name{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        margin: 0;
+        padding: 0;
+        grid-area: nf3Name;
+    }
+
+    .nf4Img{
+        margin-top: 1em;
+        grid-area: nf4Img;
+    }
+
+    .nf4Name{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        margin: 0;
+        padding: 0;
+        grid-area: nf4Name;
+    }
+   
+   
     
 
+   .suggestions{
+    color: #858388;
+    background-color: whitesmoke;
+    grid-area: suggestions;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px 200px 50px 200px 50px;
+    grid-template-areas:    "sugTittle " 
+                            "img1"
+                            "sugC1"
+                            "img2"
+                            "sugC2";
+                            
+   }
+
+   .sugTittle{
+       grid-area: sugTittle;
+       margin-left: 20px;
+       font-size: 1.2em;
+       font-weight: 400;
+   }
+   .img1{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       grid-area: img1;
+       width: 300px;
+       height: 200px;
+       margin-left: 1em;
+       border-radius: 5px;
+
+   }
+   .sugC1{
+       grid-area: sugC1;
+       margin-top: 5px;
+       margin-left: 1em;
+       
+   }
+   .img2{
+       grid-area: img2;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width: 300px;
+       height: 200px;
+       margin-left: 1em;
+       border-radius: 5px;
+
+   }
+   .sugC2{
+       grid-area: sugC2;
+       margin-top: 5px;
+       margin-left: 1em;
    }
    .friends{
        background-color: #1d1b33;
        color: white;
        grid-area: friends;
+       margin-top: -20em;
    }
 
    .friend{
@@ -220,27 +363,8 @@
         margin-left: 1em;
     }
 
-   .comments{
-    background-color: brown;
-    grid-area: comments;
-   }
-
-   .NO_friend{
-       display: flex;
-       justify-content: left;
-       align-items: center;
-   }
-   .NO_friend img{
-       border-radius: 25%;
-       display: block;
-       margin-left: 12px;
-       width: 40px;
-       height: 40px;
-       margin-left: 1em;
-    }
-    .NO_friend p{
-        margin-left: 1em;
-    }
+   
+    
    
    @media screen and (max-width: 1280px){
 
@@ -353,7 +477,7 @@
         <div class="videoSection">2
     
         </div>
-        <div class="playlist">3
+        <div class="playlist">
             <h4 class="my-playlist-tittle">
                 My Playlist
             </h4>
@@ -425,14 +549,19 @@
         </div>
         <div class="inputSection">
             <h3>
-                Comentarios
+                Coments
             </h3>
             <input class="inputText" type="text" placeholder="Add your comment">
         </div>
         
-        <div class="suggestions">6
-    
+        <div class="suggestions">
+            <h2 class="sugTittle">Suggestions</h2>
+            <img class="img1" src="./compu.jpg" alt="">
+            <p class="sugC1">How to buy a Laptop</p>
+            <img class="img2" src="./compu2.jpg" alt="">
+            <p class="sugC2">How to buy a Laptop #2</p>
         </div>
+        
         <div class="friends">
             <h4 class="my-playlist-tittle">
                 Friends Playlists
@@ -462,35 +591,36 @@
         </div>
 
         <div class="comments">
-            <div class="NO_friend">
-                <img src="./userAccount2.png" alt="">
-                <p>
-                    Kristina Summers
-                </p>
+            <div class="nf1Img">
+                <img  src="./userAccount2.png" alt=""> 
             </div>
-            <div class="NO_friend">
-                <img src="./userAccount2.png" alt="">
-                <p>Arnoldo Alvarez</p>
+            <div class="nf1Name">
+                <h2>Kristina Summers</h2>
                 <p>Nirvana's Roomates</p>
             </div>
-            <div class="NO_friend">
-                <img src="./userAccount2.png" alt="">
-                <p>Race Els</p>
-                <p>Race Els</p>
+            <div class="nf2Img">
+                <img src="./userAccount2.png" alt=""> 
             </div>
-            <div class="NO_friend">
-                <img src="./userAccount2.png" alt="">
-                <p>Loreli Els</p>
+            <div class="nf2Name">
+                <h2>Arnoldo Alvarez</h2>
+                <p>Nirvana's Roomates</p>
             </div>
-            <div class="NO_friend">
-                <img src="./userAccount2.png" alt="">
-                <p>Debora Soto</p>
+
+            <div class="nf3Img">
+                <img  src="./userAccount2.png" alt=""> 
             </div>
-            <div class="NO_friend">
-                <img src="./userAccount2.png" alt="">
-                <p>Luke Skywalker</p>
+            <div class="nf3Name">
+                <h2>Loreli Els</h2>
+                <p>Nirvana's Roomates</p>
             </div>
-    
+            <div class="nf4Img">
+                <img src="./userAccount2.png" alt=""> 
+            </div>
+            <div class="nf4Name">
+                <h2>Race Els</h2>
+                <p>Nirvana's Roomates</p>
+            </div>
+                
         </div>
     </section>
    
