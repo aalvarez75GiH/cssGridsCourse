@@ -48,7 +48,7 @@
     .container{
         display: grid;
         grid-template-columns: 325px 1fr 450px;
-        grid-template-rows: 400px 200px 200px 120px 110%;
+        grid-template-rows: 400px 200px 200px 120px 600px;
         width: 100vw;
         height: 100vh;
         background-color:aquamarine;
@@ -74,7 +74,7 @@
         width: 100%;
         height: 0;
         padding: 31.9%; 
-        background-color: greenyellow;
+        background-color: #1d1b33;
         grid-area: videoSection;
     }
 
@@ -442,9 +442,33 @@
    }
    @media screen and (max-width: 1023px){
     .burger-button{
+        cursor: pointer;
+        z-index: 9;
         display: block;
         margin-left: 90%;
-    }   
+    }
+
+    .playlist{
+        position: fixed;
+        background-color: #1d1b33;
+        z-index: 8;
+        top: 0;
+        left: -100vw;
+        margin-top: 20px;
+        width: 100vw;
+        /* height: 100vh; */
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s;
+    }
+
+    .playlist.is-active{
+        left:0;
+    }
+
+
     .container{                 
         display: grid;
         grid-template-columns: 1fr 500px;
@@ -576,7 +600,7 @@
     }   
     .container{
         grid-template-columns: 380px 100%;
-        grid-template-rows: 100px 1fr 200px 150px 100vh;
+        grid-template-rows: 100px 1fr 200px 100px 750px;
     }
 
     .badge img{
@@ -600,10 +624,22 @@
         margin-right: .8em;
     }
 
+    .suggestions{
+    grid-template-columns: 100%;
+    grid-gap: 25px;
+    grid-template-rows: 40px 300px 40px 300px 40px;
+    grid-template-areas:    "sugTittle " 
+                            "img1"
+                            "sugC1"
+                            "img2"
+                            "sugC2";
+                            
+   }
+
     .img1{
       
-      width: 400px;
-      height: 300px;
+      width: 320px;
+      height: 320px;
       margin-left: 3em;
       border-radius: 5px;
 
@@ -616,8 +652,8 @@
   }
   .img2{
      
-      width: 400px;
-      height: 300px;
+      width: 320px;
+      height: 320px;
       margin-left: 3em;
       border-radius: 5px;
 
@@ -636,8 +672,8 @@
     }    
     .container{
         display: grid;
-        grid-template-columns: 325px 1fr 433px;
-        grid-template-rows: 80px 484px 200px 120px 293px 100%;
+        grid-template-columns: 325px 1fr 100%;
+        grid-template-rows: 80px 1fr 200px 120px 293px 100%;
         width: 100vw;
         height: 100vh;
         background-color:aquamarine;
@@ -648,6 +684,7 @@
                                 " comments     comments     comments    "
                                 " suggestions  suggestions  suggestions "
                                 " suggestions  suggestions  suggestions ";
+       
     
     }
     .badge{
@@ -698,7 +735,7 @@
    }
     .img1{
       
-       width: 550px;
+       width: 400px;
        height: 420px;
        margin-left: 3em;
        border-radius: 5px;
@@ -712,7 +749,7 @@
    }
    .img2{
       
-       width: 550px;
+       width: 400px;
        height: 420px;
        margin-left: 3em;
        border-radius: 5px;
@@ -730,6 +767,22 @@
         display: block;
         margin-left: 90%;
     }   
+
+    .playlist{
+        position: fixed;
+        background-color: #1d1b33;
+        z-index:9;
+        top: 0;
+        left: -100vw;
+        margin-top: 60px;
+        width: 100vw;
+        height: 100vh;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s;
+    }
    .badge img{
        margin-left: 5em;
        }
@@ -820,14 +873,29 @@
 
    @media screen and (max-width: 320px){
     .burger-button{
-        display: block;
         margin-left: 85%;
     }   
+
+    .playlist{
+        position: fixed;
+        background-color: #1d1b33;
+        z-index:9;
+        top: 0;
+        left: -100vw;
+        margin-top: 80px;
+        width: 100vw;
+        height: 100vh;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s;
+    }
     .badge img{
-       margin-left: 5em;
+        margin-left: 5em;
        }
 
-       .container{
+    .container{
         display: grid;
         grid-template-columns: 325px 1fr 433px;
         grid-template-rows: 80px 300px 200px 120px 293px 100%;
@@ -859,7 +927,7 @@
     }
 
 
-.youtube-video{
+    .youtube-video{
         position: absolute;
         top: 0;
         bottom: 0;
@@ -874,12 +942,12 @@
 
     }
     .addList{
-        width: 160px;
-        font-size: 14px;
-        margin-left: 2em;
+        width: 125px;
+        font-size: 12px;
+        margin-left: 1em;
     }
     .tools .share, .download{
-        margin-left: 1em; 
+        margin-left: 2em; 
     }
     
     /* *********************************  */
@@ -907,7 +975,7 @@
         grid-area: suggestions;
         display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 50px 200px 50px 200px;
+        grid-template-rows: 50px 240px 50px 200px;
         grid-template-areas:    "sugTittle " 
                                 "img1"
                                 "sugC1"
@@ -921,8 +989,8 @@
    }
     .img1{
       
-       width: 200px;
-       height: 200px;
+       width: 230px;
+       height: 230px;
        border-radius: 5px;
 
    }
@@ -932,8 +1000,8 @@
    }
    .img2{
       
-       width: 200px;
-       height: 200px;
+       width: 230px;
+       height: 230px;
        margin-left: 3em;
        border-radius: 5px;
 
@@ -953,7 +1021,7 @@
 
         <div class="badge">
             <img src="./logo_platzi.png" alt=""> 
-            <i class="icon-menu burger-button"></i> 
+            <i class="icon-menu burger-button" id="burger-menu"></i> 
         </div>
         
         <div class="videoSection">
@@ -1111,12 +1179,22 @@
                 
         </div>
     </section>
-   
+    <script>
+        const menu = document.querySelector('.playlist');
+        console.log(menu);
+        const burgerButton = document.querySelector('#burger-menu');
+        console.log(burgerButton);
+       
 
-
-
-    
-
-    
+        burgerButton.addEventListener('click', hideShow);
+        function hideShow(){
+            if (menu.classList.contains('is-active')){
+                menu.classList.remove('is-active');
+            }else{
+                menu.classList.add('is-active');
+            }
+            
+        }
+    </script>
 </body>
 </html>
