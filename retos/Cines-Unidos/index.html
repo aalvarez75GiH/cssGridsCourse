@@ -355,6 +355,21 @@
        
 
         @media screen and (max-width: 515px){
+        
+        .container{
+            width: 100vw;
+            height: 100vh;
+            background-color:aquamarine;
+            display: grid;
+            grid-template-columns: 100px 100vw;
+            grid-template-rows: 70px 70px 100vh;
+            grid-template-areas: " badge                    badge"
+                                 " InputSection      InputSection"
+                                 " main                     main";
+            /* overflow: hidden; */
+            
+        }
+        
         .InputSection input{
             width: 80%;
             height: 10%;
@@ -364,6 +379,13 @@
             border-radius: 5px;
             margin-left: 120px;
             margin-right: 20px;
+        }
+        .bar{
+            display: none;
+        }
+
+        .credentials{
+            display: none;
         }
         .titulos{
             display: flex;
@@ -375,14 +397,6 @@
             margin-left: 80px;
         }
         
-        .container{
-            grid-template-columns: 70px 100vw;
-            grid-template-rows: 70px 70px 100%;
-            grid-template-areas: " badge        credentials  "
-                                 " InputSection InputSection "
-                                 " main         main         ";
-            /* overflow: hidden; */
-        }
            
         .content{
             margin: 0;
@@ -426,9 +440,9 @@
         .container{
             grid-template-columns: 70px 100vw;
             grid-template-rows: 70px 70px 100%;
-            grid-template-areas: " badge        credentials  "
-                                 " InputSection InputSection "
-                                 " main         main         ";
+            grid-template-areas: " badge                    badge"
+                                 " InputSection      InputSection"
+                                 " main                     main";
             /* overflow: hidden; */
         }
         .InputSection input{
@@ -438,7 +452,7 @@
             font-size: 16px;
             border: 1px solid #dbdbe2;
             border-radius: 5px;
-            margin-left: 90px;
+            margin-left: 1em;
             
         }
         
